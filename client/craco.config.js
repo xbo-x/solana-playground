@@ -144,7 +144,7 @@ module.exports = {
           CRATES: defineFromPublicDir("crates", (dirItems) => {
             const importable = Object.keys(
               JSON.parse(
-                fs.readFileSync(path.join("..", "supported-crates.json"))
+                fs.readFileSync("supported-crates.json")
               )
             ).map((name) => name.replaceAll("-", "_"));
 
@@ -158,7 +158,7 @@ module.exports = {
 
           /** Supported packages(TypeScript) */
           PACKAGES: fs.readFileSync(
-            path.join("..", "supported-packages.json"),
+            "supported-packages.json",
             "utf8"
           ),
 
